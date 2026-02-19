@@ -1,0 +1,1 @@
+{\n  "name": "@arts/sass-foundations",\n  "version": "1.0.0",\n  "exports": {\n    ".": {\n      "sass": "./src/sass/_index.sass"\n    }\n  },\n  "files": ["src/sass"]\n}\n
