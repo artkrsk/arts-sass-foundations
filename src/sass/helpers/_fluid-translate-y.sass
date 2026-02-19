@@ -1,0 +1,12 @@
+@use '../vars' as *
+@use './functions' as *
+
+@mixin fluid-translate-y($min-value, $max-value, $min-vw: $min_width, $max-vw: $max_width, $multiplier: 1)
+	transform: translateY(calc(#{$multiplier} * #{$min-value} * 1px))
+	@media only screen and (min-width: $min-vw) and (max-width: $max-vw)
+		$min-vw-value: strip-unit($min-vw)
+		$max-vw-value: strip-unit($max-vw)
+		$vw-diff: $max-vw-value - $min-vw-value
+		transform: translateY(calc(#{$multiplier} * ((#{$min-value} * 1px) + (#{$max-value} - #{$min-value}) * ((100vw - #{$min-vw-value}px) / #{$vw-diff}))))
+	@media only screen and (min-width: $max-vw)
+		transform: translateY(calc(#{$multiplier} * #{$max-value} * 1px))
