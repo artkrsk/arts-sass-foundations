@@ -1,0 +1,42 @@
+// Media Fullwidth — parent or content controls dimensions
+.media-fullwidth
+	display: block
+	position: relative
+	width: 100%
+
+.media-fullwidth_absolute
+	position: absolute
+	top: 0
+	left: 0
+	width: 100%
+	height: 100%
+
+.media-fullwidth__image
+	display: block
+	z-index: 1
+
+.media-fullwidth__video
+	z-index: 10
+
+.media-fullwidth__overlay
+	z-index: 20
+
+// Media Fullheight — aspect-ratio preserved via padding-bottom hack
+.media-fullheight
+	display: inline-block
+	position: relative
+	--media-width: 1920
+	--media-height: 1080
+	width: calc(var(--media-width) / var(--media-height) * var(--media-parent-height, 100%))
+	max-width: 100%
+	height: 0
+	padding-bottom: calc(var(--media-height) / var(--media-width) * 100%)
+
+.media-fullheight__image
+	z-index: 1
+
+.media-fullheight__video
+	z-index: 10
+
+.media-fullheight__overlay
+	z-index: 20

@@ -1,0 +1,19 @@
+.screen-reader-text
+	clip: rect(1px, 1px, 1px, 1px)
+	clip-path: inset(50%)
+	height: 1px
+	width: 1px
+	margin: -1px
+	overflow: hidden
+	padding: 0
+	position: absolute
+	word-wrap: normal !important
+
+	&:focus
+		clip: auto !important
+		clip-path: none
+		display: block
+		height: auto
+		width: auto
+		position: static
+		overflow: visible
